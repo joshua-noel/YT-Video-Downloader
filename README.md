@@ -14,7 +14,8 @@ This downloader is designed to download videos from youtube. It offers a simple 
 `./downloader.py`
 
 ### Or
-Download the folder "pre-compiled build" and run "downloader.exe"
+1. Download and unzip the folder 'pre-compiled build'
+2. Run the downloader "downloader.exe" located in 'dist/downloader'
 
 ## Contributing
 This project is not currently open for contributions
