@@ -11,7 +11,7 @@ This downloader is designed to download videos from youtube. It offers a simple 
 `pip install -r dependencies.txt`
 
 3. Run the downloader
-`./downloader.py`
+`./downloader.pyw`
 
 ### Or
 1. Download and unzip the folder 'pre-compiled build'
