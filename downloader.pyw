@@ -2,7 +2,7 @@
 '''
 Author: Joshua Noel
 License: MIT
-Current Build: v0.1
+Current Build: v0.2
 '''
 
 import easygui as g
@@ -42,29 +42,29 @@ def downloadVideo(url, fileFormat, downloadDir):
     	g.msgbox("An error has occured")
     	return 0
 
-    fileName = safe_filename(yt.title) #used for naming file in user system
-
     #downloads either mp3 or mp4 based on user
     if fileFormat == "MP4":
     	stream = yt.streams.filter(progressive= True).first() #downlaods mp4 from url
     	stream.download(downloadDir)
-    	input("Video downloaded as {}".format(fileName))
 
     elif fileFormat == "MP3":
     	stream = yt.streams.filter(only_audio= True).first() #downloads mp3 from url
     	stream.download(downloadDir)
-    	input("Video downloaded as {}".format(fileName))
 
-def menu(logo, choices): #shortens main menu call
-	return g.buttonbox("", "Youtube Video Downloader", image= logo, choices= choices)
+    else:
+        pass
+
+def menu(logo, choices, downloadDir): #shortens main menu call
+	return g.buttonbox("\t\tDownload Location: {}".format(downloadDir), "Youtube Video Downloader", image= logo, choices= choices)
 
 def main():
+	downloadDir = os.path.expanduser("~/Downloads") #sets default download location
+
 	logo = "logo.png"
 	choices = ["Download", "Set Download Location", "Quit"]
-	downloadDir = os.getcwd() #sets default download location to location of file
 
 	while 1: #main program loop
-		option = menu(logo, choices)
+		option = menu(logo, choices, downloadDir)
 
 		if option is None: #built in exit button
 			sys.exit(0)
@@ -83,7 +83,7 @@ def main():
 			downloadDir = g.diropenbox()
 
 		elif option == choices[2]: #quit button
-			sys.exit(0)	
+			sys.exit(0)
 
 if __name__ == "__main__":
 	main()
