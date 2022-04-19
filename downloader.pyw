@@ -48,12 +48,13 @@ def downloadVideo(url, fileFormat, downloadDir):
         return 0
 
     else:
-        #downloads either mp3 or mp4 based on user choice
         if fileFormat == "MP4":
+            g.msgbox("Downloading: {}".format(yt.streams.filter(only_audio= True).first().title))
             stream = yt.streams.filter(progressive= True).first() #downloads mp4 from url
             stream.download(downloadDir)
 
         elif fileFormat == "MP3":
+            g.msgbox("Downloading: {}".format(yt.streams.filter(only_audio= True).first().title))
             stream = yt.streams.filter(only_audio= True).first() #downloads mp3 from url
             stream.download(downloadDir)
 
@@ -66,42 +67,6 @@ def downloadPlaylist(url, fileFormat, downloadDir):
     for url in p.video_urls: #loops through all the videos in the playlist and downloads each
         downloadVideo(url, fileFormat, downloadDir)
 
-#use below if above does not work
-'''
-def downloadPlaylist(url, fileFormat, downloadDir):
-    p = Playlist(str(url)) #creates p object to manipulate before downloading
-
-    #downloads either mp3 or mp4 based on user choice
-    if fileFormat == "MP4":
-        for url in p.video_urls: #loops through all the videos in the playlist and downloads each
-            #exception handling
-            try:
-                yt = YouTube(str(url)) #creates yt object to manipulate before downloading
-
-            except pytube.exceptions.VideoUnavailable:
-                g.msgbox("Video currently unavailable")
-
-            else:
-                stream = yt.streams.filter(progressive= True).first() #downloads mp4 from url
-                stream.download(downloadDir)  
-
-    elif fileFormat == "MP3":
-        for url in p.video_urls: #loops through all the videos in the playlist and downloads each
-            #exception handling
-            try:
-                yt = YouTube(str(url)) #creates yt object to manipulate before downloading
-
-            except pytube.exceptions.VideoUnavailable:
-                g.msgbox("Video currently unavailable")
-
-            else:   
-                stream = yt.streams.filter(progressive= True).first() #downloads mp4 from url
-                stream.download(downloadDir)
-
-    else:
-        pass
-'''
-
 def menu(logo, choices, downloadDir): #shortens main menu call
     return g.buttonbox("\t\tDownload Location: {}".format(downloadDir), "Youtube Video Downloader", image= logo, choices= choices) #returns which button is pressed
 
@@ -109,7 +74,7 @@ def main():
     downloadDir = os.path.expanduser("~\Downloads") #sets default download location
 
     logo = "logo.png"
-    choices = ["Download Video", "Download Playlist", "Set Download Location", "Quit"] #choices for main menu buttons
+    choices = ["Download Video", "Download Playlist", "Set Download Location", "Quit"] #main menu buttons
 
     while True: #main program loop
         option = menu(logo, choices, downloadDir)
