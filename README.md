@@ -4,14 +4,7 @@ This downloader is designed to download videos from youtube. It offers a simple 
 ## Installation
 
 ### Either
-1. Clone the repository
-`git clone https://github.com/joshua-noel/YT-Video-Downloader.git`
-
-2. Install the required dependenices
-`pip install -r dependencies.txt`
-
-3. Run the downloader
-`./downloader.py`
+![alt text](https://github.com/joshua-noel/YT-Video-Downloader/blob/main/carbon.png?raw=true)
 
 ### Or
 Download the latest release version
