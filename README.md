@@ -1,6 +1,6 @@
-<h1 align="center">
-  Youtube Video Downloader
-</h1>
+<p align="center">
+  <img src="https://github.com/joshua-noel/YT-Video-Downloader/blob/main/banner.png">
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/github/license/joshua-noel/YT-Video-Downloader">
@@ -8,7 +8,9 @@
   <img src="https://img.shields.io/github/last-commit/joshua-noel/YT-Video-Downloader">
 </p>
 
+# About
 This downloader is designed to download videos from youtube. It offers a simple GUI with the ability to set a custom download location.
+
 ## Installation
 
 ![alt text](https://github.com/joshua-noel/YT-Video-Downloader/blob/main/carbon.png?raw=true)
