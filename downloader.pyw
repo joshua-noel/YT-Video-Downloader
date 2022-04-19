@@ -16,6 +16,7 @@ import sys
 TODO:
 -Add support for higher quality youtube dowloads
 -Set persistent download location
+-Add confirm all button
 '''
 
 def downloadVideo(url, fileFormat, downloadDir):
@@ -49,8 +50,8 @@ def downloadVideo(url, fileFormat, downloadDir):
 
     else:
         if fileFormat == "MP4":
-            g.msgbox("Downloading: {}".format(yt.streams.filter(only_audio= True).first().title))
-            stream = yt.streams.filter(progressive= True).first() #downloads mp4 from url
+            g.msgbox("Downloading: {}".format(yt.streams.filter(progressive= True).first().title))
+            stream = yt.streams.filter(progressive= True).get_highest_resolution()#downloads mp4 from url
             stream.download(downloadDir)
 
         elif fileFormat == "MP3":
