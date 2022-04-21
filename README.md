@@ -25,7 +25,7 @@ This downloader is designed to download videos from youtube. It offers a simple 
 `./downloader.py`
 
 ## Latest Release
-Download the latest release version [here](https://github.com/joshua-noel/YT-Video-Downloader/releases/tag/Public)
+Download the latest release version [here](https://github.com/joshua-noel/YT-Video-Downloader/releases/tag/v0.4-Public)
 
 ## Contributing
 This project is not currently open for contributions
