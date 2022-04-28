@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
- 
+  <img src="https://img.shields.io/github/license/joshua-noel/YT-Video-Downloader">
   <img src="https://img.shields.io/github/v/release/joshua-noel/YT-Video-Downloader">
 </p>
 
