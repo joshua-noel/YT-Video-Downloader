@@ -1,2 +1,2 @@
-pytube == 12.0.0
+pytube == 12.1.0
 easygui == 0.98.3
